@@ -1,20 +1,21 @@
 <template>
-  <form @submit.prevent="submitForm">
-    <div>
-      <label for="nome">Nome:</label>
-      <input id="nome" v-model="nome" type="text">
+  <form @submit.prevent="submitForm" class="mt-4">
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome:</label>
+      <input id="nome" v-model="nome" type="text" class="form-control" placeholder="Ex. Geladeira">
     </div>
-    <div>
-      <label for="descricao">Descrição:</label>
-      <textarea id="descricao" v-model="descricao"></textarea>
+    <div class="mb-3">
+      <label for="descricao" class="form-label">Descrição:</label>
+      <textarea id="descricao" v-model="descricao" class="form-control"></textarea>
     </div>
-    <div>
-      <label for="tensao">Tensão:</label>
-      <input id="tensao" v-model="tensao" type="text">
+    <div class="mb-3">
+      <label for="tensao" class="form-label">Tensão:</label>
+      <input id="tensao" v-model="tensao" type="text" class="form-control" placeholder="110v ou 220v">
     </div>
-    <div>
-      <label for="marca">Marca:</label>
-      <select id="marca" v-model="marca">
+    <div class="mb-3">
+      <label for="marca" class="form-label">Marca:</label>
+      <select id="marca" v-model="marca" class="form-select">
+        <option value="" selected disabled>Selecione uma marca</option>
         <option value="Electrolux">Electrolux</option>
         <option value="Brastemp">Brastemp</option>
         <option value="Fischer">Fischer</option>
@@ -22,7 +23,7 @@
         <option value="LG">LG</option>
       </select>
     </div>
-    <button type="submit">Salvar</button>
+    <button type="submit" class="btn btn-primary">Salvar</button>
   </form>
 </template>
 
@@ -48,9 +49,10 @@ export default {
       }
 
       api.createEletrodomestico(eletrodomestico)
-        .then(() => {
-          alert('Eletrodoméstico cadastrado com sucesso.')
-          this.resetForm()
+      .then(() => {
+        alert('Eletrodoméstico cadastrado com sucesso.');
+        this.resetForm();
+        window.location.href = '/'
         })
         .catch(error => {
           alert('Ocorreu um erro ao cadastrar o eletrodoméstico.')

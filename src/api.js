@@ -9,10 +9,18 @@ const apiClient = axios.create({
 
 export default {
   getEletrodomesticos() {
-    return apiClient.get('/eletrodomesticos')
+    return apiClient.get(`/eletrodomesticos`)
+  },
+  getEletrodomestico(id) {
+    return apiClient.get(`/eletrodomesticos/${id}`)
   },
   createEletrodomestico(eletrodomestico) {
-    return apiClient.post('/eletrodomesticos', eletrodomestico)
+    return apiClient.post(`eletrodomesticos`, eletrodomestico)
+  },
+  updateEletrodomestico(id, eletrodomestico) {
+    return apiClient.put(`/eletrodomesticos/${id}`, eletrodomestico)
+  },
+  deleteEletrodomestico(id) {
+    return apiClient.delete(`/eletrodomesticos/${id}`)
   }
-  // Implemente métodos adicionais para atualizar e remover eletrodomésticos, se necessário
 }
