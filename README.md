@@ -8,7 +8,7 @@ Certifique-se de ter o Node.js e o npm instalados.
 
 1. Clone este repositório:
 
-git clone <URL_DO_REPOSITÓRIO>
+git clone https://github.com/luisTrivinh0/eletrodomesticos-frontend.git
 
 2. Navegue até o diretório do projeto:
 
